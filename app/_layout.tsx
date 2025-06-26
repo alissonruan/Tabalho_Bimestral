@@ -1,6 +1,6 @@
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { StyleSheet, Text, TextInput, View, Button, TouchableOpacity } from "react-native";
 export default function ExibirCalculo(){
     
     const router = useRouter();
@@ -11,14 +11,18 @@ export default function ExibirCalculo(){
     return(
         <View>
             <Text style={styles.title}>Bem Vindo ao App</Text>
-             <Text style={styles.blue}>Digite o seu nome:</Text>
+             <Text style={styles.blue}>Digite o seu nome</Text>
              <TextInput style={styles.text} onChangeText={setNome} value={nome}/>
              
-             <Text style={styles.blue}>Digite sua Altura:</Text>
+             <Text style={styles.blue}>Digite sua Altura</Text>
              <TextInput style={styles.text} onChangeText={setAltura} value={altura}/>
              
-             <Text style={styles.blue}>Digite o seu Peso:</Text>
+             <Text style={styles.blue}>Digite o seu Peso</Text>
              <TextInput style={styles.text} onChangeText={setPeso} value={peso}/>
+             
+             <TouchableOpacity style={styles.button} onPress={()=>{}}>
+                <Text style={styles.button}>Calcular IMC</Text>
+             </TouchableOpacity>
         </View>
     );
 }
@@ -46,6 +50,14 @@ const styles = StyleSheet.create({
         backgroundColor: "red",
         color: "white",
         textAlign: "center",
+        fontSize: 25
+    },
+
+    button: {
+        textAlign: "center",
+        borderWidth: 1,
+        color: "white",
+        backgroundColor: "red",
         fontSize: 25
     }
 })
