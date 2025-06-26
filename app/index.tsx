@@ -1,11 +1,12 @@
+import { useRouter } from "expo-router";
 import React from "react";
-import { TextInput, View } from "react-native";
+import { Text, View } from "react-native";
 
-export default function CalculoImc(){
+export default function App(){
+    const router = useRouter();
     return(
         <View>
-            <TextInput style={styles.input} onChangeText={onChangeNumber} value={text}/>
+            <Text>Bem Vindo ao App</Text>
         </View>
-    );
-
+    )
 }
