@@ -1,12 +1,13 @@
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import { StyleSheet, Text, TextInput, View, Button, TouchableOpacity } from "react-native";
+import App from "./index";
 export default function ExibirCalculo(){
     
     const router = useRouter();
-        const[nome, setNome] = useState();
-        const[altura, setAltura] = useState();
-        const[peso, setPeso] = useState();
+        const[nome, setNome] = useState('');
+        const[altura, setAltura] = useState('');
+        const[peso, setPeso] = useState('');
     
     return(
         <View>
@@ -20,9 +21,7 @@ export default function ExibirCalculo(){
              <Text style={styles.blue}>Digite o seu Peso</Text>
              <TextInput style={styles.text} onChangeText={setPeso} value={peso}/>
              
-             <TouchableOpacity style={styles.button} onPress={()=>{}}>
-                <Text style={styles.button}>Calcular IMC</Text>
-             </TouchableOpacity>
+             <App peso={peso} altura={altura}/>
         </View>
     );
 }
